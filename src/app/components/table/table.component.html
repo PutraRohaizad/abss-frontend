@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let header of headers">{{ header }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.age }}</td>
+            <td>{{ item.gender }}</td>
+            <td>
+                <button (click)="showData(item.id)">Show</button>
+                <button (click)="deleteData(item.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

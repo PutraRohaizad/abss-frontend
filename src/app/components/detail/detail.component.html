@@ -1,0 +1,26 @@
+<br><br>
+==========================================================
+<br><br>
+<p>DETAILS</p>
+
+<button *ngIf="!editView;else viewEdit" (click)="editData()">Edit</button>
+<ng-template #viewEdit>
+<button  (click)="updateData()">Update</button>
+</ng-template>
+
+
+<div *ngIf="!editView;else ev">
+    <div> Name : {{ profile.name }} </div>
+    <div> Age : {{ profile.age }} </div>
+    <div> Gender : {{ profile.gender }} </div>
+</div>
+<ng-template #ev>
+    <div> Name :  <input type="text" [(ngModel)]="fname" /> </div>
+    <div> Age :  <input type="text" [(ngModel)]="age" /></div>
+    <div> Gender :   
+        <select [(ngModel)]="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+</ng-template>

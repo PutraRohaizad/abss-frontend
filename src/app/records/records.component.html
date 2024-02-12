@@ -1,0 +1,19 @@
+
+<app-form (emitProfile)="createProfile($event)" ></app-form>
+<br><br>
+<app-table 
+[headers]="headers" 
+[data]="data" 
+(emitDeleteProfile)="deleteProfile($event)"
+(emitShowProfile)="showProfile($event)"
+>
+</app-table>
+
+<app-detail 
+*ngIf="showDetail" 
+[profile]="profile" 
+[editView]="editView" 
+(emitEditProfile)="editProfile($event)"
+(emitUpdateProfile)="updateProfile($event)"
+></app-detail>
+
